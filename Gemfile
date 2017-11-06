@@ -1,23 +1,22 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rails'
-gem 'sqlite3'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-gem 'sdoc', group: :doc
-gem 'rake'
+gem "coffee-rails"
+gem "jbuilder"
+gem "jquery-rails"
+gem "rails"
+gem "rake"
+gem "sass-rails"
+gem "sdoc", group: :doc
+gem "sqlite3"
+gem "turbolinks"
+gem "uglifier"
 
 group :development, :test do
-  gem 'byebug'
-  gem 'rspec-rails'
+  gem "byebug"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem 'web-console'
-  gem 'spring'
+  gem "spring"
+  gem "web-console"
 end
-
