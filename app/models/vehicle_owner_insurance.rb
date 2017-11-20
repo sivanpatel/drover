@@ -5,7 +5,6 @@
 # if the vehicle is rented from 2nd Oct to 5th Oct then the owner pays for 3 less days, giving a total of £5
 
 class VehicleOwnerInsurance < ActiveRecord::Base
-
   belongs_to :vehicle
 
   def total_days_covered
@@ -16,11 +15,10 @@ class VehicleOwnerInsurance < ActiveRecord::Base
     # total_days_covered - vehicle.driver_insurances.map{|driver_insurance| driver_insurance.numds}.sum
     # Does not seem to work!!
 
-    return 4
+    4
   end
 
   def total_charge_pounds
     total_days_charged_for * vehicle.vehicle_owner_insurance_daily_rate_pounds
   end
-
 end

@@ -1,4 +1,4 @@
-class CreateDriverInsurances < ActiveRecord::Migration
+class CreateDriverInsurances < ActiveRecord::Migration[5.1]
   def change
     create_table :driver_insurances do |t|
       t.date :start_date
