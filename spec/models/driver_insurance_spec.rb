@@ -18,7 +18,7 @@ RSpec.describe DriverInsurance, type: :model do
     vehicle = Vehicle.create(driver_insurance_daily_rate_pounds: 58.50)
     driver_insurance = DriverInsurance.create(start_date: Date.today, end_date: Date.today + 1.week,
                                               vehicle: vehicle)
-    expect(Partner.driver_insurance_p(driver_insurance)).to eq 7 * 58.50
+    expect(Partner.driver_insurance_p(driver_insurance)).to eq 409.5
     # the test is just copying the implementation at the moment,
     # also 58.50 is hardcoded in the implementation which should be changed somewhow
   end
