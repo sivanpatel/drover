@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe DriverInsurance, type: :model do
   it "calculates the number of days to charge for a driver insurance policy" do
     driver_insurance = DriverInsurance.create(start_date: Date.today, end_date: Date.today + 1.week)
-    expect(driver_insurance.numds).to eq 7
+    expect(driver_insurance.number_of_days_insured).to eq 7
   end
 
   it "calculates the number of days to charge for all the insurance for one driver" do
