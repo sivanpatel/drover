@@ -12,7 +12,6 @@ class DriverInsurance < ActiveRecord::Base
   belongs_to :vehicle
 
   def number_of_days_insured
-    number_of_hours = (end_date - start_date).to_f * 24
-    number_of_hours / 24 # convert to days
+    (end_date - start_date).to_f
   end
 end

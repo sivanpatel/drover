@@ -18,10 +18,17 @@ RSpec.describe DriverInsurance, type: :model do
     vehicle = Vehicle.create(driver_insurance_daily_rate_pounds: 58.50)
     driver_insurance = DriverInsurance.create(start_date: Date.today, end_date: Date.today + 1.week,
                                               vehicle: vehicle)
-    expect(Partner.driver_insurance_p(driver_insurance)).to eq 409.5
+    expect(Partner.driver_insurance_price(driver_insurance)).to eq 409.5
     # the test is just copying the implementation at the moment,
-    # also 58.50 is hardcoded in the implementation which should be changed somewhow
+    # also 58.50 is hardcoded in the implementation which should be changed
   end
 
-  it "calculates the price for all the insurance for one driver"
+  it "calculates the price for all the insurance for one driver" do
+    driver = Partner.create(name: "Ryan Gosling")
+    vehicle = Vehicle.create(driver_insurance_daily_rate_pounds: 58.50)
+    vehicle2 = Vehicle.create(driver_insurance_daily_rate_pounds: 60.00)
+    driver_insurance = DriverInsurance.create(start_date: Date.today, end_date: Date.today + 1.week, driver: driver, vehicle: vehicle)
+    driver_insurance2 = DriverInsurance.create(start_date: Date.today + 1.week, end_date: Date.today + 2.weeks, driver: driver, vehicle: vehicle2)
+    expect(driver.total_insurance_price(driver.driver_insurances)).to eq 829.5
+  end
 end

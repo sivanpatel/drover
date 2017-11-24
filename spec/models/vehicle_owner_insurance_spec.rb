@@ -11,7 +11,7 @@ RSpec.describe VehicleOwnerInsurance, type: :model do
     vehicle_owner_insurance = VehicleOwnerInsurance.create(start_date: Date.today, end_date: Date.today + 7.days, vehicle: vehicle)
     driver_insurance = DriverInsurance.create(start_date: Date.today + 4.days, end_date: Date.today + 11.days, vehicle: vehicle)
 
-    expect(vehicle_owner_insurance.total_charge_pounds).to eq 4.4
+    expect(vehicle_owner_insurance.total_charge).to eq 4.4
   end
 
   it "calculates the total charges for the owner using the version2 calculations" do

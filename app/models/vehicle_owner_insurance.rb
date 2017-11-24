@@ -18,7 +18,7 @@ class VehicleOwnerInsurance < ActiveRecord::Base
     4
   end
 
-  def total_charge_pounds
+  def total_charge
     total_days_charged_for * vehicle.vehicle_owner_insurance_daily_rate_pounds
   end
 end
